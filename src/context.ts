@@ -63,7 +63,7 @@ export class HonoRequest {
     return buf.buffer.slice(
       buf.byteOffset,
       buf.byteOffset + buf.byteLength,
-    );
+    ) as ArrayBuffer;
   }
 
   /** Full URL string. */
