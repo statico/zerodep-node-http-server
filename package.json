@@ -1,0 +1,42 @@
+{
+  "name": "@statico/zerodep-node-http-server",
+  "version": "0.1.0",
+  "description": "Zero-dependency TypeScript HTTP server built on node:http with Hono-compatible API",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test --experimental-strip-types --no-warnings src/**/*.test.ts src/**/**/*.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "author": "Ian Langworth <ian@langworth.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/statico/zerodep-node-http-server"
+  },
+  "keywords": [
+    "http",
+    "server",
+    "zero-dependency",
+    "typescript",
+    "node",
+    "hono-compatible"
+  ],
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  }
+}
