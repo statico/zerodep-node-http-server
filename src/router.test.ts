@@ -88,6 +88,13 @@ describe("compilePath", () => {
     assert.ok(c.pattern.test("/deep/nested/path"));
   });
 
+  it("compiles the bare * pattern as a catch-all (Hono-compatible)", () => {
+    const c = compilePath("*");
+    assert.ok(c.pattern.test("/"));
+    assert.ok(c.pattern.test("/anything"));
+    assert.ok(c.pattern.test("/deep/nested/path"));
+  });
+
   it("escapes regex-special characters in literal segments", () => {
     const c = compilePath("/api/v1.0");
     // The dot should be escaped — only "/api/v1.0" matches, not "/api/v1X0"

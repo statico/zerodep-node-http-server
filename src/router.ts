@@ -20,8 +20,8 @@ export interface Route {
 export function compilePath(path: string): CompiledRoute {
   const paramNames: string[] = [];
 
-  // Handle the catch-all "/*" pattern (matches everything)
-  if (path === "/*") {
+  // Handle the catch-all "/*" and "*" patterns (matches everything)
+  if (path === "/*" || path === "*") {
     return { pattern: /^\/(.*)$/, paramNames: [] };
   }
 
